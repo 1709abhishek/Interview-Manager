@@ -24,23 +24,25 @@ module.exports.create = async function (req, res) {
 module.exports.allocate = async function (req, res) {
     try {
         console.log(req.body.student);
-        let stu = await Student.find({ name: req.body.student });
-        let inter = await Interview.find({ company: req.query.company });
+        let stu = await Student.findOne({ name: req.body.student });
+        let inter = await Interview.findOne({ company: req.query.company });
         let interviews = await Interview.find({});
         let students = await Student.find({});
-        console.log(stu);
+        console.log(inter);
         if (stu) {
-            var new_result = await new Result({
-                company: inter.id,
-                student: stu.id,
-                result: "On Hold"
-            });
-            let result = await new_result.save();
-            return res.render("create_student", {
-                title: "create student",
-                student: students,
-                interviews: interviews
-            })
+            // var new_result = await new Result({
+            //     company: inter.id,
+            //     result: "On Hold"
+            // });
+            // let new_interview = new Interview();
+            // new_interview.company = inter.company;
+            // new_interview.date = inter.date;
+            // console.log("######", new_interview.student);
+            await inter.student.push(stu);
+            await inter.save();
+            // await inter.remove();
+            // await new_interview.save();
+            return res.redirect('/students/create-form');
         }
     } catch (err) {
         console.log('********', err);

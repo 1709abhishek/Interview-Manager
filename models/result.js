@@ -8,11 +8,11 @@ const resultSchema = new mongoose.Schema(
         },
         company: {
             type: mongoose.Schema.Types.ObjectId,
-            ref: 'interview'
+            ref: 'Interview'
         },
-        student: {
+        students: {
             type: mongoose.Schema.Types.ObjectId,
-            ref: 'student'
+            ref: 'Student'
         }
     },
     {

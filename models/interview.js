@@ -10,10 +10,10 @@ const interviewSchema = new mongoose.Schema(
             type: Date,
             required: true
         },
-        student: {
+        student: [{
             type: mongoose.Schema.Types.ObjectId,
-            ref: 'student'
-        }
+            ref: 'Student'
+        }]
     },
     {
         timestamps: true,
