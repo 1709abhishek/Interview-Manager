@@ -1,12 +1,11 @@
 const express = require("express");
 
 const router = express.Router();
-const interviewController = require("../../../controllers/api/v1/interview_controller");
+const resultController = require("../../../controllers/api/v1/result_controller");
 
 console.log("router loaded");
 
-router.post("/create-interview", interviewController.create);
-router.post("/allocate", interviewController.allocate);
+router.get("/show", resultController.show);
 
 // for any further routes, access from here
 // router.use('/routerName', require('./routerfile));
