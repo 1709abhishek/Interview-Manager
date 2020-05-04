@@ -19,7 +19,7 @@
 </body> -->
 
 <body>
-
+    <%if(locals.user){%>
     <h2>SquareOne students Form</h2>
 
     <% for (stu of student){%>
@@ -146,7 +146,7 @@
 
     <a href="/results/create-csv">Click to download</a>
 
-
+    <%}%>
 </body>
 
 </html>

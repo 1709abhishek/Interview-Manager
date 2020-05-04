@@ -6,6 +6,7 @@ const homeController = require("../../../controllers/api/v1/home_controller");
 console.log("router loaded");
 
 router.get("/", homeController.home);
+router.get("/all-jobs", homeController.allJobs);
 router.use("/users", require("./users"));
 router.use("/students", require("./students"));
 router.use("/interviews", require("./interviews"));
