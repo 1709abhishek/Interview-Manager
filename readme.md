@@ -1,7 +1,7 @@
 ![](project.gif)
 
 
-# SquareOne
+# Application Manager
 
 An interface for the employees of a company to fill in the data into the database and then download it in CSV format.  
 
@@ -45,19 +45,29 @@ Routes | Request Body | Method | Description | Response
 | [/users/sign-out/] | No | GET | Logout User | No
 | [/users/sign-up/] | (email, password, name, confirm_password) | POST | User Sign Up | No
 | [/users/profile/] | No | GET | Get user's details | No
+| [/students/create-form/] | No | GET | Get interview home page | No
+| [/students/create/] | POST | GET | Get user's details | No
 
 
 # setup
 
->         git clone https://github.com/1709abhishek/SquareOne
->         cd SquareOne
+>         git clone https://github.com/1709abhishek/Interview-Manager
+>         cd Interview-Manager
 >         run nodemon index.js
+
+# application flow
+
 ---- SignUp
 ---- click on click me a form will appear
 ---- SignIn
 ---- click on click me a form will appear
----- reset password
----- Sign out
+---- click on check students link, the interview registration homepage will appear
+---- now under application manager students form click the button to register a student.
+---- under interview form click the bottom button to register a company.
+---- to the right side of the company (like amazon) a button will appear, click on it to register a student for interview
+---- click on the company to get the list of students taking the interview.
+---- update the result and submit to change the interview status.
+---- Now on interview homepage click download button to download the csv
 
 
 
