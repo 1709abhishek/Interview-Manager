@@ -57,9 +57,9 @@ Routes | Request Body | Method | Description | Response
 
 # application flow
 
----- SignUp
+---- Employee SignUp
 ---- click on click me a form will appear
----- SignIn
+---- Employee SignIn
 ---- click on click me a form will appear
 ---- click on check students link, the interview registration homepage will appear
 ---- now under application manager students form click the button to register a student.
@@ -122,18 +122,20 @@ Routes | Request Body | Method | Description | Response
 
 # Features
 Implemented the following for a user with respective html pages:
-1. Sign up with email
-2. Sign in (you can redirect to a blank home page with a sign out and reset password button after sign in)
-3. Forgot password (you can either generate a random password and send on email, or send a reset password link which expires in some time [preferred])
-4. Sign out 
-5. Reset password after sign in
+1. Employee Sign up with email
+2. Employee Sign in (you can redirect to a blank home page with a sign out and reset password button after sign in)
+3. interview homepage (show list of students and companies and pass the control to here.)
+4. Employee Sign out 
+5. register a student
 6. The password stored in the db should be encrypted
 7. Taken care of the following
 Display notifications for 
 --unmatching passwords during sign up
 --incorrect password during sign in
-8. enable re-captcha on both sign up and log in
-9. enable nodemailer for mailing
+8. register a company
+9. register an interview for a student for a company
+10. change status of the company interview (on hold, pass, fail, didn't attempt)
+11. fetch the available jobs using 2 apis (github and indeed)
 
 
 
