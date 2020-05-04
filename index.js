@@ -11,6 +11,8 @@ const passportLocal = require("./config/passport-local-strategy");
 const MongoStore = require("connect-mongo")(session);
 const flash = require("connect-flash");
 const CustomMware = require("./config/middleware");
+//make the tmp folder available to the browser
+app.use('/tmp', express.static(__dirname + '/tmp'));
 
 app.use(express.urlencoded());
 app.use(cookieParser());

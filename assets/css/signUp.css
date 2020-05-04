@@ -101,6 +101,12 @@ hr {
   display: table;
 }
 
+.headings{
+  color: grey;
+  font-weight: 200;
+  font-family: sans-serif;
+}
+
 /* Change styles for cancel button and signup button on extra small screens */
 @media screen and (max-width: 300px) {
   .cancelbtn, .signupbtn {
