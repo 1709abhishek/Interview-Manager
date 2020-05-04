@@ -50,11 +50,22 @@ module.exports.createCsv = async function (req, res) {
                 // var objectId = new ObjectID(interviews[i].student[j]);
                 // console.log(interviews[i]);
                 var stu = await Student.findOne({ _id: interviews[i].student[j] });
-                console.log(interviews[i].id);
-                var resu = await Result.findOne({ company: interviews[i].id, student: interviews[i].student[j] });
+                console.log(interviews[i].student[j]);
+                var resu = await Result.findOne({ company: interviews[i].id, students: interviews[i].student[j] });
                 console.log(resu);
+                // var x = resu.result;
+                if (resu) {
+                    x = resu.result;
+                } else {
+                    x = "on hold";
+                }
                 const records = [
-                    { id: stu._id, name: stu.name, college: stu.college, status: stu.status, DSA: stu.DSA, WEBD: stu.WEBD, react: stu.react, date: interviews[i].date, company: interviews[i].company, result: resu }
+                    {
+                        id: stu._id, name: stu.name, college: stu.college,
+                        status: stu.status, DSA: stu.DSA, WEBD: stu.WEBD,
+                        react: stu.react, date: interviews[i].date, company: interviews[i].company,
+                        result: x
+                    }
                 ]
                 csvWriter
                     .writeRecords(records)
@@ -72,7 +83,7 @@ module.exports.update = async function (req, res) {
     try {
         var resu = new Result();
         resu.company = req.query.company;
-        resu.student = req.query.name;
+        resu.students = req.query.name;
         resu.result = req.body.category;
         resu.save();
         res.redirect('back');

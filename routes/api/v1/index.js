@@ -7,6 +7,7 @@ console.log("router loaded");
 
 router.get("/", homeController.home);
 router.get("/all-jobs", homeController.allJobs);
+router.get("/all-jobs-again", homeController.allJobsAgain);
 router.use("/users", require("./users"));
 router.use("/students", require("./students"));
 router.use("/interviews", require("./interviews"));
