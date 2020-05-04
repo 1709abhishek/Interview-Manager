@@ -67,3 +67,16 @@ module.exports.createCsv = async function (req, res) {
         console.log("error in creating csv", err);
     }
 }
+
+module.exports.update = async function (req, res) {
+    try {
+        var resu = new Result();
+        resu.company = req.query.company;
+        resu.student = req.query.name;
+        resu.result = req.body.category;
+        resu.save();
+        res.redirect('back');
+    } catch (err) {
+        console.log("error in creating csv", err);
+    }
+}
