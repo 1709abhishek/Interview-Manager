@@ -41,12 +41,18 @@ An interface for the employees of a company to fill in the data into the databas
 Routes | Request Body | Method | Description | Response
 |---|---|---|---|---|
 | [/] | No | POST | User Sign up  | No
+| [/all-jobs] | No | GET | get github jobs | No
+| [/all-jobs-again] | No | GET | get indeed jobs  | No
 | [/users/sign-in/] | (email, password) | POST | User Login | No
 | [/users/sign-out/] | No | GET | Logout User | No
 | [/users/sign-up/] | (email, password, name, confirm_password) | POST | User Sign Up | No
 | [/users/profile/] | No | GET | Get user's details | No
 | [/students/create-form/] | No | GET | Get interview home page | No
 | [/students/create/] | POST | GET | Get user's details | No
+| [/interviews/create-interview/] | POST | GET | Get user's details | No
+| [/interviews/allocate/] | POST | GET | Get user's details | No
+| [/results/show/] | POST | GET | Get user's details | No
+| [/results/create-csv/] | POST | GET | Get user's details | No
 
 
 # setup
@@ -128,10 +134,9 @@ Implemented the following for a user with respective html pages:
 4. Employee Sign out 
 5. register a student
 6. The password stored in the db should be encrypted
-7. Taken care of the following
-Display notifications for 
---unmatching passwords during sign up
---incorrect password during sign in
+7. Taken care of the following display notifications for 
+    --unmatching passwords during sign up
+    --incorrect password during sign in
 8. register a company
 9. register an interview for a student for a company
 10. change status of the company interview (on hold, pass, fail, didn't attempt)
