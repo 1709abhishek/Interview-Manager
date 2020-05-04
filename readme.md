@@ -88,17 +88,24 @@ Routes | Request Body | Method | Description | Response
     |    ├── api
     |        ├── v1
     |            ├── home_controller.js  
-    |            ├── users_controller.js          
-    ├── mailers
-    │   ├── random_mailer.js
+    |            ├── interview_controller.js
+    |            ├── result_controller.js  
+    |            ├── students_controller.js  
+    |            ├── users_controller.js            
+    ├── multer
+    │   ├── data.csv
     ├── models
+    │   ├── interview.js
+    │   ├── result.js
+    │   ├── student.js
     │   ├── user.js
     ├── views
     │   ├── _footer.ejs
         ├── _header.ejs
+        ├── create_student.ejs
         ├── home.ejs
         ├── layout.ejs
-        ├── reset_password.ejs
+        ├── results_page.ejs
         ├── user_profile.ejs
         ├── user_sign_in.ejs
         ├── user_sign_up.ejs
@@ -106,6 +113,9 @@ Routes | Request Body | Method | Description | Response
     |    ├── api
     |        ├── v1
     |            ├── index.js  
+    |            ├── interviews.js
+    |            ├── results.js
+    |            ├── students.js
     |            ├── users.js
     ├── .gitignore
 
